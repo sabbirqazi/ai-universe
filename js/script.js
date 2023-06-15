@@ -1,5 +1,3 @@
-
-
 let showAllData = false;
 let infos = [];
 
@@ -21,7 +19,7 @@ const loadData = async () => {
 
 const displayData = infos => {
     document.getElementById('sort-btn').addEventListener('click', function () {
-        const sortedData = infos.sort((a, b) => new Date(b.published_in) - new Date(a.published_in)); //sorting descending
+        const sortedData = infos.sort((a, b) => new Date(b.published_in) - new Date(a.published_in));  //sorting descending
         displayData(sortedData); 
     });
     const infosContainer = document.getElementById('infos-container');
@@ -155,9 +153,7 @@ const displayDetails = info => {
 
     `
 
-
 }
-
 
 toggleLoader(true, 'loader');
 loadData()
