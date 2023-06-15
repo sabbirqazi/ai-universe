@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Universe Hub</title>
+    <!-- font awesome link -->
+    <script
+      src="https://kit.fontawesome.com/bcea1110af.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- tailwind and daisy UI link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="mt-5">
+      <div class="text-center space-y-5">
+        <h1 class="font-bold text-4xl">AI Universe Hub</h1>
+        <button id="sort-btn" class="btn btn-warning text-white">
+          Sort by Date
+        </button>
+      </div>
+    </header>
+    <main>
+      <!-- loader -->
+      <section id="loader" class="justify-center items-center h-96 flex hidden">
+        <div
+          class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-gray-900"
+        ></div>
+      </section>
+      <!-- cards -->
+      <section class="flex flex-col justify-center items-center gap-10 my-10">
+        <div
+          id="infos-container"
+          class="grid grid-cols-1 lg:grid-cols-3 gap-20"
+        ></div>
+        <div id="see-more" class="my-5 text-center hidden">
+          <button id="btn-see-more" class="btn btn-warning text-white">
+            See More
+          </button>
+        </div>
+      </section>
+      <!-- modal -->
+
+      <section>
+        <section
+          id="modal-loader"
+          class="justify-center items-center absolute flex hidden"
+        >
+          <div
+            class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-gray-900"
+          ></div>
+        </section>
+        <input type="checkbox" id="detailModal" class="modal-toggle" />
+        <div class="modal">
+          <div
+            class="modal-box max-w-screen-lg overflow-x-auto: auto relative p-10"
+          >
+            <label
+              for="detailModal"
+              class="btn btn-sm btn-circle btn-warning absolute right-0 top-0"
+              >✕</label
+            >
+            <section class="lg:flex space-y-4">
+              <div class="bg-red-100 shadow-xl rounded-lg lg:mr-3">
+                <h3 id="ai-description" class="font-bold text-2xl px-5"></h3>
+                <div
+                  id="plans-container"
+                  class="grid lg:grid-cols-3 lg:gap-24 gap-10 text-center my-6 mx-10"
+                ></div>
+                <div
+                  id="features-and-integrations"
+                  class="lg:flex justify-between lg:px-10"
+                ></div>
+              </div>
+              <div>
+                <div class="card w-80 bg-base-100 shadow-xl">
+                  <div class="flex justify-end">
+                    <button
+                      id="accuracy"
+                      class="bg-red-400 absolute text-white mt-2 ml-2 rounded-lg h-8 w-36 hidden"
+                    ></button>
+                  </div>
+                  <figure><img id="ai-image" src="" /></figure>
+
+                  <div class="card-body">
+                    <h2 id="ai-input" class="card-title"></h2>
+                    <p id="ai-output"></p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>
